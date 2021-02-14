@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    display: flex;
+    background-image: url("./assets/top-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100vw; */
+    height: 100vh;
+}
+
+
+
+.choose {
+    display: flex;
+    background-image: url("./assets/main-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100vw; */
+    height: 110vh;
+}
+
+
+.learning {
+    display: flex;
+    background-image: url("./assets/learning-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100vw; */
+    height: 100vh;
+}
