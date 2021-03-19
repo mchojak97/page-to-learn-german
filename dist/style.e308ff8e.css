@@ -17,7 +17,7 @@ textarea:focus{
 .home {
     padding-left: 20vw;
     display: flex;
-    background-image: url("./assets/top-bg.svg");
+    background-image: url("/top-bg.ffd30db2.svg");
     background-repeat: no-repeat;
     background-size: cover;
     /* width: 100vw; */
@@ -53,7 +53,7 @@ textarea:focus{
 .choose {
     padding: 3vh;
     display: flex;
-    background-image: url("./assets/main-bg.svg");
+    background-image: url("/main-bg.42461b3b.svg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 110vh;
@@ -107,7 +107,7 @@ textarea:focus{
 
 .learning {
     display: flex;
-    background-image: url("./assets/learning-bg.svg");
+    background-image: url("/learning-bg.51a59a1d.svg");
     background-repeat: no-repeat;
     background-size: cover;
     /* width: 100vw; */
@@ -136,3 +136,5 @@ textarea:focus{
     background-color: white;
     content: "";
 }
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
