@@ -132,6 +132,7 @@ textarea:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    perspective: 800px;
 }
 
 .learning__answer {
@@ -163,13 +164,58 @@ textarea:focus {
     content: "";
 }
 
-.learning__flashcard {
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.learning__flashcard { 
+    color: rgb(245, 245, 245);
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    height: 30vmin;
+    width: 50vmin;
+    margin-bottom: 2vh;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    perspective: 200px;
+}
+
+
+
+
+.flashcard--front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     height: 30vmin;
     width: 50vmin;
     background: linear-gradient(233.38deg, #548BDA 21.06%, #45E0E0 91.63%);
     box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     margin-bottom: 2vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+
+.flashcard--back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 30vmin;
+    width: 50vmin;
+    transform: rotateY(180deg);
+    background: linear-gradient(233.38deg, #bf54da 21.06%, #e0454d 91.63%);
+    box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-bottom: 2vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
 }
 
 .flashcard__buttons {
