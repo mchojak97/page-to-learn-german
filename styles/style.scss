@@ -45,7 +45,6 @@ textarea:focus {
 .home__button {
     box-sizing: border-box;
     border: none;
-    color: #686868;
     font-weight: 400;
     font-size: 20px;
     width: 12rem;
@@ -67,6 +66,10 @@ textarea:focus {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    h1 {
+        // color: #B3ADAD;
+        padding-bottom: 4vh;
+    }
 }
 
 
@@ -103,6 +106,7 @@ textarea:focus {
 }
 
 .choose__button {
+    font-size: 1.2em;
     border: none;
     width: 10vw;
     height: 3vw;
