@@ -1,4 +1,5 @@
 import { flashcardsList } from "../data/flashcardsList";
+import { phrasesList } from "../data/phrasesList";
 
 const flashcardCover = document.querySelector(".learning__flashcard");
 const flashcardFront = document.querySelector(".flashcard--front");
@@ -16,11 +17,14 @@ const chooseButtonPhrases = document.querySelector(".choose__button--phrases");
 
 const checkButton = document.querySelector(".flashcard__button--check");
 const inputForm = document.querySelector(".learning__answer");
-const learningForm = document.querySelector(".learning__form");
 
 //Get first flashcard
 let randomWord =
   flashcardsList[Math.floor(Math.random() * flashcardsList.length)];
+
+//Get first phrase
+let randomPhrase =
+  phrasesList[Math.floor(Math.random() * phrasesList.length)];
 
 let section;
 
@@ -32,7 +36,6 @@ const language = {
 
 //Displaying Choose Section on click 'Ucz się' button
 const displayChooseSection = () => (chooseSection.style.display = "flex");
-
 homeButton.addEventListener("click", displayChooseSection);
 
 //Displaying Learning Section with Polish-German Flashcards on click 'Start' button
@@ -45,7 +48,7 @@ const displayPolishSection = () => {
 
 chooseButtonPolish.addEventListener("click", displayPolishSection);
 
-//Displaying Learning Section with Polish-German Flashcards on click 'Start' button
+//Displaying Learning Section with German-Polish Flashcards on click 'Start' button
 const displayGermanSection = () => {
   learningSection.style.display = "grid";
   flashcardFront.textContent = randomWord.german;
@@ -54,6 +57,16 @@ const displayGermanSection = () => {
 };
 
 chooseButtonGerman.addEventListener("click", displayGermanSection);
+
+//Displaying Learning Section with Phrases Flashcards on click 'Start' button
+const displayPhrasesSection = () => {
+  learningSection.style.display = "grid";
+  flashcardFront.textContent = randomPhrase.polish;
+  flashcardBack.textContent = randomPhrase.german;
+  section = language.PHRASES;
+};
+
+chooseButtonPhrases.addEventListener("click", displayPhrasesSection);
 
 //Fliping flash card
 const flipCard = () => {
@@ -67,6 +80,9 @@ const newWord = () => {
   randomWord =
     flashcardsList[Math.floor(Math.random() * flashcardsList.length)];
 
+  randomPhrase =
+    phrasesList[Math.floor(Math.random() * phrasesList.length)];
+
   //checking chosen section
   switch (section) {
     case language.POLISH:
@@ -78,8 +94,9 @@ const newWord = () => {
       flashcardBack.textContent = randomWord.polish;
       break;
     case language.PHRASES:
-      flashcardFront.textContent = randomWord.german;
-      flashcardBack.textContent = randomWord.polish;
+      flashcardFront.textContent = randomPhrase.polish;
+      flashcardBack.textContent = randomPhrase.german;
+      break
     default:
       flashcardFront.textContent = randomWord.polish;
       flashcardBack.textContent = randomWord.german;
@@ -110,12 +127,12 @@ const checkAnswer = (event) => {
 };
 
 const checkAnswerOnEnter = (event) => {
-  
+  inputForm.style.color = "rgb(245, 245, 245)";
   if (event.key == "Enter") {
     event.preventDefault();
     const userAnswer = document.getElementById("card-answer").value;
     const correctAnswer = flashcardBack.textContent;
-    if (userAnswer !== correctAnswer) inputForm.style.color = "red";
+    if (userAnswer !== correctAnswer) inputForm.style.color = "#DD0000";
     else {
       inputForm.style.color = "green";
       flipCard();

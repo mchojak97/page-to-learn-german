@@ -34,12 +34,18 @@ textarea:focus {
     transform: translateY(-4vw);
 }
 
-.home__h1 {
+.home__w1 {
     font-size: 4rem;
 }
 
-.home__h2 {
+.home__w2 {
     font-size: 2rem;
+    color: #DD0000;
+}
+.home__w3 {
+    font-size: 2rem;
+    color: #FFCE00;
+    margin-bottom: 1vh;
 }
 
 .home__button {
