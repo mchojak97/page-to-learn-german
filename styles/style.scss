@@ -203,7 +203,6 @@ textarea:focus {
   margin-bottom: 2vh;
   transform-style: preserve-3d;
   transition: transform 1s;
-  perspective: 200px;
 }
 
 .flashcard--front {
@@ -292,25 +291,25 @@ textarea:focus {
   html {
     font-size: 12px;
   }
-  .learning__right {
-    width: 100vw;
-    align-items: center;
-  }
 
   .learning__left {
     display: none;
   }
-
+  .learning {
+      justify-content: center;
+  }
+  .learning__right {
+    width: 97vw;
+  }
+  .learning__answer {
+      font-size: 2rem;
+  }
   .flashcard__buttons {
     flex-direction: column;
     width: 30vmin;
   }
   .flashcard__button {
     margin: 0.7vmin 0;
-  }
-  .learning__input--after:after {
-    position: absolute;
-    transform: translate(2.5vmin, -9px);
   }
 
   .choose__button {
@@ -350,6 +349,10 @@ textarea:focus {
     width: 70vmin;
     height: 40vmin;
   }
+
+  .learning__answer {
+    font-size: 1.5rem;
+}
 }
 
 @media screen and (max-width: 450px) {
