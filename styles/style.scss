@@ -25,7 +25,7 @@ textarea:focus {
     background-repeat: no-repeat;
     background-size: cover;
     // width: 100vw; 
-    height: 105vh;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
 }
@@ -43,9 +43,13 @@ textarea:focus {
 }
 
 .home__button {
+    box-sizing: border-box;
     border: none;
-    width: 13em;
-    height: 3.5em;
+    color: #686868;
+    font-weight: 400;
+    font-size: 20px;
+    width: 12rem;
+    height: 3rem;
     background: #E4D3FF;
     box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.25);
     border-radius: 11px;
@@ -55,11 +59,11 @@ textarea:focus {
 
 .choose {
     padding: 3vh;
-    display: flex;
+    display: none;
     background-image: url("../assets/main-bg.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 110vh;
+    height: 100vh;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -109,7 +113,8 @@ textarea:focus {
 }
 
 .learning {
-    display: grid;
+    display: none;
+    // display: grid;
     grid-template-columns: 1fr 1fr;
     background-image: url("../assets/learning-bg.svg");
     background-repeat: no-repeat;
