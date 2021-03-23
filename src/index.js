@@ -16,6 +16,7 @@ const chooseButtonPhrases = document.querySelector(".choose__button--phrases");
 
 const checkButton = document.querySelector(".flashcard__button--check");
 const inputForm = document.querySelector(".learning__answer");
+const learningForm = document.querySelector(".learning__form");
 
 //Get first flashcard
 let randomWord =
@@ -66,7 +67,7 @@ const newWord = () => {
   randomWord =
     flashcardsList[Math.floor(Math.random() * flashcardsList.length)];
 
-    //checking chosen section
+  //checking chosen section
   switch (section) {
     case language.POLISH:
       flashcardFront.textContent = randomWord.polish;
@@ -97,7 +98,8 @@ const nextFlashcard = () => {
 
 nextButton.addEventListener("click", nextFlashcard);
 
-const checkAnswer = () => {
+const checkAnswer = (event) => {
+  event.preventDefault();
   const userAnswer = document.getElementById("card-answer").value;
   const correctAnswer = flashcardBack.textContent;
   if (userAnswer !== correctAnswer) inputForm.style.color = "red";
@@ -107,4 +109,20 @@ const checkAnswer = () => {
   }
 };
 
+const checkAnswerOnEnter = (event) => {
+  
+  if (event.key == "Enter") {
+    event.preventDefault();
+    const userAnswer = document.getElementById("card-answer").value;
+    const correctAnswer = flashcardBack.textContent;
+    if (userAnswer !== correctAnswer) inputForm.style.color = "red";
+    else {
+      inputForm.style.color = "green";
+      flipCard();
+    }
+  }
+};
+
 checkButton.addEventListener("click", checkAnswer);
+
+inputForm.addEventListener("keypress", checkAnswerOnEnter, false);
