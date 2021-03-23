@@ -15,6 +15,8 @@ const homeButton = document.querySelector(".home__button");
 const learningSection = document.querySelector(".learning");
 const chooseButton = document.querySelector(".choose__button");
 
+const checkButton = document.querySelector(".flashcard__button--check");
+const inputForm = document.querySelector(".learning__answer");
 //Displaying Choose Section on click 'Ucz się' button
 const displayChooseSection = () => (chooseSection.style.display = "flex");
 
@@ -35,19 +37,33 @@ flashcardBack.textContent = randomWord.german;
 
 reverseButton.addEventListener("click", flipCard);
 
-
 //New flashcard
 const newWord = () => {
-  randomWord = flashcardsList[Math.floor(Math.random() * flashcardsList.length)];
+  randomWord =
+    flashcardsList[Math.floor(Math.random() * flashcardsList.length)];
   flashcardFront.textContent = randomWord.polish;
   flashcardBack.textContent = randomWord.german;
-}
+  inputForm.style.color = "white";
+  document.getElementById("card-answer").value = ''
+};
 
-const nextFlashcard = () => { 
+const nextFlashcard = () => {
   if (flashcardCover.classList.contains("is-flipped")) {
-      flashcardCover.classList.toggle("is-flipped")
-      setTimeout(newWord, 300)
-    } else newWord();  
+    flashcardCover.classList.toggle("is-flipped");
+    setTimeout(newWord, 300);
+  } else newWord();
 };
 
 nextButton.addEventListener("click", nextFlashcard);
+
+const checkAnswer = () => {
+  const userAnswer = document.getElementById("card-answer").value;
+  const correctAnswer = flashcardBack.textContent;
+  if (userAnswer !== correctAnswer) inputForm.style.color = "red";
+  else {
+    inputForm.style.color = "green";
+    flipCard();
+  }
+};
+
+checkButton.addEventListener("click", checkAnswer);
