@@ -9,7 +9,7 @@ export const flashcardsList = [
     },
     {
         polish: 'robotnik',
-        german: 'der Arbeiten',
+        german: 'der Arbeiter',
     },
     {
         polish: 'fotograf',
