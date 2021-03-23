@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mchojak97/page-to-learn-german-with-node#readme",
   "dependencies": {
+    "data": "^0.6.1",
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "mongodb": "^3.6.4",

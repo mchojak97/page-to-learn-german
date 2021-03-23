@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>German Course</title>
     <link rel="stylesheet" href="styles/style.scss">
@@ -14,46 +14,43 @@
 <body>
     <header>
         <div class="menu">
-            <a href="index.html">Home</a>
+            <!-- <a href="index.html">Home</a> -->
             <!-- <a href="admin.html">Control Panel</a> -->
         </div>
     </header>
     <main>
         <section class="home">
             <div class="home__greetings">
-                <h1 class="home__h1">Tschus!</h1>
-                <h2 class="home__h2">3 sposoby</h2>
-                <h2 class="home__h2">Na nauke</h2>
+                <h1 class="home__w1">Tschüs!</h1>
+                <h2 class="home__w2">3 sposoby</h2>
+                <h2 class="home__w3">Na nauke</h2>
                 <a href="#modules"><button class="home__button">Ucz się!</button></a>
             </div>
         </section>
 
         <section class="choose">
             <a name="modules"></a>
-            <h1>Lorem Ipsum</h1>
+            <h1>Wybierz swój sposób nauki</h1>
             <div class="choose__container">
                 <div class="choose__table">
                     <img class="choose__logo" src="/assets/sheep.svg" alt="">
-                    <h2 class="choose__tittle">Fiszki</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
-                    <a href="#flashcards-module"><button class="choose__button">Start</button></a>
+                    <h2 class="choose__tittle">Polskie</h2>
+                    <p>Fiszka z polskim słówkiem. Zadaniem jest podanie niemieckiego tłumaczenia.</p>
+                    <a href="#flashcards-module"><button class="choose__button choose__button--polish">Start</button></a>
                 </div>
 
                 <div class="choose__table choose__table--translate">
                     <img class="choose__logo" src="/assets/sheep.svg" alt="">
-                    <h2 class="choose__tittle">Fiszki</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
-                    <a href="#flashcards-module"><button class="choose__button">Start</button></a>
+                    <h2 class="choose__tittle">Niemieckie</h2>
+                    <p>Fiszka z niemieckim słówkiem. Zadaniem jest podanie polskiego tłumaczenia.</p>
+                    <a href="#flashcards-module"><button class="choose__button choose__button--german">Start</button></a>
                 </div>
 
                 <div class="choose__table">
                     <img class="choose__logo" src="assets/sheep.svg" alt="">
-                    <h2 class="choose__tittle">Fiszki</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
-                    <a href="#flashcards-module"><button class="choose__button">Start</button></a>
+                    <h2 class="choose__tittle">Zwroty</h2>
+                    <p>Fiszka z polskim zwrotem. Zadaniem jest podanie niemieckiego tłumaczenia.</p>
+                    <a href="#flashcards-module"><button class="choose__button choose__button--phrases">Start</button></a>
                 </div>
             </div>
         </section>
@@ -65,14 +62,17 @@
                 <img src="assets/learning-guy.svg" alt="">
             </div>
             <div class="learning__right">
-
-                <div class="learning__flashcard"></div>
-                <div class="flashcard__buttons">
-                    <button class="flashcard__button">Odwróć</button>
-                    <button class="flashcard__button">Sprawdź</button>
-                    <button class="flashcard__button">Następna</button>
+                
+                <div class="learning__flashcard">
+                    <div class="flashcard--front"></div>
+                    <div class="flashcard--back"></div>
                 </div>
-                <form action="" method="post">
+                <div class="flashcard__buttons">
+                    <button class="flashcard__button flashcard__button--reverse">Odwróć</button>
+                    <button class="flashcard__button flashcard__button--check">Sprawdź</button>
+                    <button class="flashcard__button flashcard__button--next">Następna</button>
+                </div>
+                <form action="" method="get">
                     <div class="learning__input--after">
                         <label for="card-answer" class="learning__answer--title">Wpisz odpowiedź:</label>
                         <input class="learning__answer" type="text" name="card-answer" id="card-answer">

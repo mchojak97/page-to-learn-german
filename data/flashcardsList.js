@@ -1,4 +1,4 @@
-export const flashcards = [
+export const flashcardsList = [
     {
         polish: 'kot',
         german: 'die Katze',
@@ -9,7 +9,7 @@ export const flashcards = [
     },
     {
         polish: 'robotnik',
-        german: 'der Arbeiten',
+        german: 'der Arbeiter',
     },
     {
         polish: 'fotograf',

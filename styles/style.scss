@@ -25,7 +25,7 @@ textarea:focus {
     background-repeat: no-repeat;
     background-size: cover;
     // width: 100vw; 
-    height: 105vh;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
 }
@@ -34,18 +34,27 @@ textarea:focus {
     transform: translateY(-4vw);
 }
 
-.home__h1 {
+.home__w1 {
     font-size: 4rem;
 }
 
-.home__h2 {
+.home__w2 {
     font-size: 2rem;
+    color: #DD0000;
+}
+.home__w3 {
+    font-size: 2rem;
+    color: #FFCE00;
+    margin-bottom: 1vh;
 }
 
 .home__button {
+    box-sizing: border-box;
     border: none;
-    width: 13em;
-    height: 3.5em;
+    font-weight: 400;
+    font-size: 20px;
+    width: 12rem;
+    height: 3rem;
     background: #E4D3FF;
     box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.25);
     border-radius: 11px;
@@ -55,14 +64,18 @@ textarea:focus {
 
 .choose {
     padding: 3vh;
-    display: flex;
+    display: none;
     background-image: url("../assets/main-bg.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 110vh;
+    height: 100vh;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    h1 {
+        // color: #B3ADAD;
+        padding-bottom: 4vh;
+    }
 }
 
 
@@ -99,6 +112,7 @@ textarea:focus {
 }
 
 .choose__button {
+    font-size: 1.2em;
     border: none;
     width: 10vw;
     height: 3vw;
@@ -109,7 +123,8 @@ textarea:focus {
 }
 
 .learning {
-    display: grid;
+    display: none;
+    // display: grid;
     grid-template-columns: 1fr 1fr;
     background-image: url("../assets/learning-bg.svg");
     background-repeat: no-repeat;
@@ -132,9 +147,14 @@ textarea:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    perspective: 800px;
 }
 
 .learning__answer {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-decoration: none !important;
     justify-content: center;
     display: flex;
     padding: 1vw;
@@ -163,13 +183,58 @@ textarea:focus {
     content: "";
 }
 
-.learning__flashcard {
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.learning__flashcard { 
+    color: rgb(245, 245, 245);
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    height: 30vmin;
+    width: 50vmin;
+    margin-bottom: 2vh;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    perspective: 200px;
+}
+
+
+
+
+.flashcard--front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     height: 30vmin;
     width: 50vmin;
     background: linear-gradient(233.38deg, #548BDA 21.06%, #45E0E0 91.63%);
     box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     margin-bottom: 2vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+
+.flashcard--back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 30vmin;
+    width: 50vmin;
+    transform: rotateY(180deg);
+    background: linear-gradient(233.38deg, #bf54da 21.06%, #e0454d 91.63%);
+    box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-bottom: 2vh;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
 }
 
 .flashcard__buttons {
