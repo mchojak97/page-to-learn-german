@@ -119,7 +119,7 @@ const checkAnswer = (event) => {
   event.preventDefault();
   const userAnswer = document.getElementById("card-answer").value;
   const correctAnswer = flashcardBack.textContent;
-  if (userAnswer !== correctAnswer) inputForm.style.color = "red";
+  if (userAnswer !== correctAnswer) inputForm.style.color = "#DD0000";
   else {
     inputForm.style.color = "green";
     flipCard();
