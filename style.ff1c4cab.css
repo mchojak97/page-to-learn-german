@@ -298,7 +298,9 @@ textarea:focus {
   }
 
   .learning {
+    padding-top: 15vh;
     justify-content: center;
+    align-items: start;
   }
 
   .learning__right {
