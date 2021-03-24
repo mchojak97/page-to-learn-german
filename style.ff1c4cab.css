@@ -27,7 +27,7 @@ textarea:focus {
   position: relative;
   padding-left: 20vw;
   display: flex;
-  background-image: url("/top-bg.ffd30db2.svg");
+  background-image: url("top-bg.ffd30db2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -74,7 +74,7 @@ textarea:focus {
 .choose {
   padding: 3vh;
   display: none;
-  background-image: url("/main-bg.42461b3b.svg");
+  background-image: url("main-bg.42461b3b.svg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -133,7 +133,7 @@ textarea:focus {
 .learning {
   display: none;
   grid-template-columns: 1fr 1fr;
-  background-image: url("/learning-bg.51a59a1d.svg");
+  background-image: url("learning-bg.51a59a1d.svg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -262,7 +262,7 @@ textarea:focus {
 
 @media screen and (max-width: 1500px) {
   .home {
-    background-image: url("/top-bg-1500.b9dd26f5.svg");
+    background-image: url("top-bg-1500.b9dd26f5.svg");
   }
 }
 @media screen and (max-width: 1300px) {
@@ -272,7 +272,7 @@ textarea:focus {
 }
 @media screen and (max-width: 1050px) {
   .home {
-    background-image: url("/top-bg-1000.6f247321.svg");
+    background-image: url("top-bg-1000.6f247321.svg");
     align-items: center;
     padding: 0;
   }
