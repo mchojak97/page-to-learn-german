@@ -1,0 +1,175 @@
+.learning {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  background-image: url("../assets/learning-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.learning__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 50%;
+  }
+}
+
+.learning__right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+}
+
+.learning__answer {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  justify-content: center;
+  display: flex;
+  padding: 2.5vmin;
+  position: relative;
+  border: none;
+  background-color: #b3adad;
+  width: 50vmin;
+  height: 9vmin;
+  border-radius: 5px;
+  box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.25);
+}
+
+.learning__answer--title {
+  color: #686868;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.learning__input--after:after {
+  position: absolute;
+  transform: translate(2.5vmin, -2vh);
+  height: 1px;
+  width: 45vmin;
+  background-color: white;
+  content: "";
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.learning__flashcard {
+  color: rgb(245, 245, 245);
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  height: 30vmin;
+  width: 50vmin;
+  margin-bottom: 2vh;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.flashcard--front {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(233.38deg, #548bda 21.06%, #45e0e0 91.63%);
+  box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin-bottom: 2vh;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flashcard--back {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotateY(180deg);
+  background: linear-gradient(233.38deg, #bf54da 21.06%, #e0454d 91.63%);
+  box-shadow: 6px 6px 13px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin-bottom: 2vh;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flashcard__buttons {
+  width: 50vmin;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0 1em 0;
+}
+
+.flashcard__button {
+  height: 4vh;
+  padding: 0 1em 0 1em;
+  width: auto;
+  font-weight: 500;
+  font-size: 1em;
+  background: #c7efef;
+  box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .learning__left {
+    display: none;
+  }
+  .learning {
+    padding-top: 15vh;
+    justify-content: center;
+    align-items: start;
+  }
+  .learning__right {
+    width: 97vw;
+  }
+  .learning__answer {
+    font-size: 2rem;
+  }
+  .flashcard__buttons {
+    flex-direction: column;
+    width: 30vmin;
+  }
+  .flashcard__button {
+    margin: 0.7vmin 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .learning__flashcard {
+    width: 70vmin;
+    height: 40vmin;
+  }
+
+  .learning__answer {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .learning__answer {
+    width: 60vmin;
+    height: 12vmin;
+  }
+  .learning__input--after:after {
+    width: 55vmin;
+  }
+}
